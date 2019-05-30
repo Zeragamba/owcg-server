@@ -39,6 +39,9 @@ group :development do
 end
 
 group :test, :development do
+  gem 'dotenv-rails' # load local config settings
+
+  # use rspec for unit testing
   gem 'rspec'
   gem 'rspec-rails'
 end
