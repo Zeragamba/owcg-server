@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
   post "/login", to: "login#login"
+
+  scope "/users" do
+    post "/", to: "user#create"
+
+    get "/me", to: "user#view"
+    patch "/me", to: "user#update"
+    delete "/me", to: "user#destroy"
+  end
 end

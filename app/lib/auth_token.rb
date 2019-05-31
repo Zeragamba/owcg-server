@@ -5,6 +5,14 @@ class AuthToken
 
   def self.decode(token)
     decoded_token = JWT.decode token, JWT_SECRET, true, :algorithm => JWT_ALGORITHM
-    return decoded_token[0]
+    decoded_token[0]
+  end
+
+  def self.for_user(user)
+    AuthToken.encode({
+      :user => {
+        :username => user.username,
+      },
+    })
   end
 end

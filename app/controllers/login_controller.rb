@@ -10,11 +10,7 @@ class LoginController < ApplicationController
 
     payload = {
       :msg => "success",
-      :auth_token => AuthToken.encode({
-        :user => {
-          :username => user.username,
-        },
-      }),
+      :auth_token => AuthToken.for_user(user),
     }
 
     render json: payload, :status => 200
