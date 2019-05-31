@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API server for the OverWatch Community Guide
 
-Things you may want to cover:
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+- Ruby 2.6.3
+- Postgres 9.10
 
-* Configuration
+## Install
 
-* Database creation
+- Clone the repo
+- Copy `.env.example` as `.env` and fill in missing values
+- run `$ rails db:prepare` to set up the database
 
-* Database initialization
+## Start
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- run `$ rails server` to start the server in development mode
