@@ -36,4 +36,16 @@ describe AuthToken do
       end
     end
   end
+
+  describe "::for_user" do
+    it "creates a JWT token for a user" do
+      user = User.create!(:username => "username", :password => "password")
+      data = {
+        :user => {
+          :username => user.username,
+        },
+      }
+      expect(AuthToken.for_user(user)).to eq(JWT.encode(data, JWT_SECRET, JWT_ALGORITHM))
+    end
+  end
 end
